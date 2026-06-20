@@ -22,6 +22,15 @@
   .step{scroll-margin-bottom:130px}
   .step[data-start-time]{cursor:pointer}
   .step.is-current{border-color:#111827;box-shadow:0 2px 8px rgba(15,23,42,.08)}
+  .section-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .section-head .num{margin-bottom:0;flex:1}
+  .section-speak-button{appearance:none;border:1px solid #d1d5db;background:#fff;color:#111827;width:30px;height:30px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex:0 0 auto}
+  .section-speak-button:hover{background:#f3f4f6;border-color:#9ca3af}
+  .section-speak-button:focus-visible{outline:2px solid #111827;outline-offset:2px}
+  .section-speak-button svg{width:16px;height:16px;display:block}
+  .section-speak-button .section-icon-pause{display:none}
+  .step.is-speaking-section .section-icon-play{display:none}
+  .step.is-speaking-section .section-icon-pause{display:block}
   .say{cursor:text}
   .narration-text{cursor:pointer}
   .tts-word{border-radius:3px;transition:background-color 120ms ease,color 120ms ease}
@@ -56,7 +65,7 @@
 
 <section class="step" data-section-index="0" data-section-label="Section 01" data-start-time="0.102083">
   <div>
-    <div class="num">Opening — Set the goal</div>
+    <div class="section-head"><div class="num">Opening — Set the goal</div><button class="section-speak-button" type="button" aria-label="Play Section 01" title="Play this section" data-section-index="0"><svg class="section-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="section-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button></div>
     <h2>What are we trying to do?</h2>
     <div class="say" data-section-index="0"><strong>Say:</strong> “<span class="narration-text"><span class="tts-word" data-word-index="0" data-start="0.102083">Today</span> <span class="tts-word" data-word-index="1" data-start="0.479708">we</span> <span class="tts-word" data-word-index="2" data-start="0.635958">are</span> <span class="tts-word" data-word-index="3" data-start="0.753125">completing</span> <span class="tts-word" data-word-index="4" data-start="1.287000">a</span> <span class="tts-word" data-word-index="5" data-start="1.352083">3×3</span> <span class="tts-word" data-word-index="6" data-start="2.172416">magic</span> <span class="tts-word" data-word-index="7" data-start="2.589083">square</span>. <span class="tts-word" data-word-index="8" data-start="4.023458">A</span> <span class="tts-word" data-word-index="9" data-start="4.153666">magic</span> <span class="tts-word" data-word-index="10" data-start="4.609375">square</span> <span class="tts-word" data-word-index="11" data-start="4.973958">means</span> <span class="tts-word" data-word-index="12" data-start="5.312500">every</span> <span class="tts-word" data-word-index="13" data-start="5.598958">row</span>, <span class="tts-word" data-word-index="14" data-start="6.250000">every</span> <span class="tts-word" data-word-index="15" data-start="6.510416">column</span>, <span class="tts-word" data-word-index="16" data-start="7.252625">and</span> <span class="tts-word" data-word-index="17" data-start="7.369791">both</span> <span class="tts-word" data-word-index="18" data-start="7.630208">diagonals</span> <span class="tts-word" data-word-index="19" data-start="8.294291">must</span> <span class="tts-word" data-word-index="20" data-start="8.541666">have</span> <span class="tts-word" data-word-index="21" data-start="8.658875">the</span> <span class="tts-word" data-word-index="22" data-start="8.750000">same</span> <span class="tts-word" data-word-index="23" data-start="9.062500">total</span>. <span class="tts-word" data-word-index="24" data-start="10.494791">We</span> <span class="tts-word" data-word-index="25" data-start="10.716166">already</span> <span class="tts-word" data-word-index="26" data-start="11.119791">know</span> <span class="tts-word" data-word-index="27" data-start="11.341166">three</span> <span class="tts-word" data-word-index="28" data-start="11.588541">numbers</span>: <span class="tts-word" data-word-index="29" data-start="12.330750">9</span>, <span class="tts-word" data-word-index="30" data-start="12.968750">4</span>, <span class="tts-word" data-word-index="31" data-start="13.580750">and</span> <span class="tts-word" data-word-index="32" data-start="13.723958">3</span>.</span>”</div>
     <div class="ask"><strong>Ask:</strong> “Which places are already filled? Which places are still empty?”</div>
@@ -82,7 +91,7 @@
 
 <section class="step" data-section-index="1" data-section-label="Section 02" data-start-time="15.078125">
   <div>
-    <div class="num">Step 1 — Find the magic sum</div>
+    <div class="section-head"><div class="num">Step 1 — Find the magic sum</div><button class="section-speak-button" type="button" aria-label="Play Section 02" title="Play this section" data-section-index="1"><svg class="section-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="section-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button></div>
     <h2>Use the 1–9 property</h2>
     <div class="say" data-section-index="1"><strong>Say:</strong> “<span class="narration-text"><span class="tts-word" data-word-index="33" data-start="15.078125">Because</span> <span class="tts-word" data-word-index="34" data-start="15.442708">this</span> <span class="tts-word" data-word-index="35" data-start="15.638041">puzzle</span> <span class="tts-word" data-word-index="36" data-start="16.015625">uses</span> <span class="tts-word" data-word-index="37" data-start="16.341166">the</span> <span class="tts-word" data-word-index="38" data-start="16.445333">numbers</span> <span class="tts-word" data-word-index="39" data-start="16.901041">1</span> <span class="tts-word" data-word-index="40" data-start="17.109375">through</span> <span class="tts-word" data-word-index="41" data-start="17.291666">9</span>, <span class="tts-word" data-word-index="42" data-start="17.916666">first</span> <span class="tts-word" data-word-index="43" data-start="18.255208">find</span> <span class="tts-word" data-word-index="44" data-start="18.502625">their</span> <span class="tts-word" data-word-index="45" data-start="18.658875">total</span>. <span class="tts-word" data-word-index="46" data-start="20.078125">The</span> <span class="tts-word" data-word-index="47" data-start="20.234375">total</span> <span class="tts-word" data-word-index="48" data-start="20.638041">is</span> <span class="tts-word" data-word-index="49" data-start="20.820333">45</span>. <span class="tts-word" data-word-index="50" data-start="22.617208">Since</span> <span class="tts-word" data-word-index="51" data-start="22.942708">there</span> <span class="tts-word" data-word-index="52" data-start="23.112000">are</span> <span class="tts-word" data-word-index="53" data-start="23.229166">three</span> <span class="tts-word" data-word-index="54" data-start="23.541666">rows</span> <span class="tts-word" data-word-index="55" data-start="23.880208">with</span> <span class="tts-word" data-word-index="56" data-start="23.997416">the</span> <span class="tts-word" data-word-index="57" data-start="24.101583">same</span> <span class="tts-word" data-word-index="58" data-start="24.414083">sum</span>, <span class="tts-word" data-word-index="59" data-start="25.065125">each</span> <span class="tts-word" data-word-index="60" data-start="25.286458">row</span> <span class="tts-word" data-word-index="61" data-start="25.468750">must</span> <span class="tts-word" data-word-index="62" data-start="25.833333">add</span> <span class="tts-word" data-word-index="63" data-start="26.028666">to</span> <span class="tts-word" data-word-index="64" data-start="26.132833">45</span> <span class="tts-word" data-word-index="65" data-start="26.835958">÷</span> <span class="tts-word" data-word-index="66" data-start="27.460958">3</span>, <span class="tts-word" data-word-index="67" data-start="28.098958">which</span> <span class="tts-word" data-word-index="68" data-start="28.281250">is</span> <span class="tts-word" data-word-index="69" data-start="28.424500">15</span>. <span class="tts-word" data-word-index="70" data-start="30.000000">So</span> <span class="tts-word" data-word-index="71" data-start="30.195333">the</span> <span class="tts-word" data-word-index="72" data-start="30.299500">magic</span> <span class="tts-word" data-word-index="73" data-start="30.729166">sum</span> <span class="tts-word" data-word-index="74" data-start="30.963541">is</span> <span class="tts-word" data-word-index="75" data-start="31.119791">15</span>.</span>”</div>
     <div class="ask"><strong>Ask:</strong> “Why do we divide by 3, not by 9?”</div>
@@ -112,7 +121,7 @@
 
 <section class="step" data-section-index="2" data-section-label="Section 03" data-start-time="32.669291">
   <div>
-    <div class="num">Step 2 — Fill the top-left corner</div>
+    <div class="section-head"><div class="num">Step 2 — Fill the top-left corner</div><button class="section-speak-button" type="button" aria-label="Play Section 03" title="Play this section" data-section-index="2"><svg class="section-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="section-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button></div>
     <h2>Use the first row</h2>
     <div class="say" data-section-index="2"><strong>Say:</strong> “<span class="narration-text"><span class="tts-word" data-word-index="76" data-start="32.669291">Look</span> <span class="tts-word" data-word-index="77" data-start="32.903666">at</span> <span class="tts-word" data-word-index="78" data-start="33.007833">the</span> <span class="tts-word" data-word-index="79" data-start="33.112000">top</span> <span class="tts-word" data-word-index="80" data-start="33.424500">row</span>. <span class="tts-word" data-word-index="81" data-start="34.726583">It</span> <span class="tts-word" data-word-index="82" data-start="34.882833">has</span> <span class="tts-word" data-word-index="83" data-start="35.065125">one</span> <span class="tts-word" data-word-index="84" data-start="35.299500">missing</span> <span class="tts-word" data-word-index="85" data-start="35.638041">number</span>, <span class="tts-word" data-word-index="86" data-start="36.197916">plus</span> <span class="tts-word" data-word-index="87" data-start="36.523458">9</span> <span class="tts-word" data-word-index="88" data-start="36.848958">and</span> <span class="tts-word" data-word-index="89" data-start="36.966166">4</span>. <span class="tts-word" data-word-index="90" data-start="38.411458">The</span> <span class="tts-word" data-word-index="91" data-start="38.541666">whole</span> <span class="tts-word" data-word-index="92" data-start="38.841166">row</span> <span class="tts-word" data-word-index="93" data-start="38.997416">must</span> <span class="tts-word" data-word-index="94" data-start="39.270833">be</span> <span class="tts-word" data-word-index="95" data-start="39.401041">15</span>. <span class="tts-word" data-word-index="96" data-start="41.002625">So</span> <span class="tts-word" data-word-index="97" data-start="41.263041">blank</span> <span class="tts-word" data-word-index="98" data-start="41.601583">+</span> <span class="tts-word" data-word-index="99" data-start="41.901041">9 + 4 = 15</span>. <span class="tts-word" data-word-index="100" data-start="44.987000">Since</span> <span class="tts-word" data-word-index="101" data-start="45.312500">9 + 4 = 13</span>, <span class="tts-word" data-word-index="102" data-start="47.643250">the</span> <span class="tts-word" data-word-index="103" data-start="47.747416">missing</span> <span class="tts-word" data-word-index="104" data-start="48.112000">number</span> <span class="tts-word" data-word-index="105" data-start="48.411458">is</span> <span class="tts-word" data-word-index="106" data-start="48.554708">2</span>.</span>”</div>
     <div class="cue"><strong>Image cue:</strong> Highlight the top row and write □ + 9 + 4 = 15.</div>
@@ -131,7 +140,7 @@
 
 <section class="step" data-section-index="3" data-section-label="Section 04" data-start-time="49.921875">
   <div>
-    <div class="num">Step 3 — Fill the bottom-right corner</div>
+    <div class="section-head"><div class="num">Step 3 — Fill the bottom-right corner</div><button class="section-speak-button" type="button" aria-label="Play Section 04" title="Play this section" data-section-index="3"><svg class="section-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="section-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button></div>
     <h2>Use the right column</h2>
     <div class="say" data-section-index="3"><strong>Say:</strong> “<span class="narration-text"><span class="tts-word" data-word-index="107" data-start="49.921875">Now</span> <span class="tts-word" data-word-index="108" data-start="50.169291">the</span> <span class="tts-word" data-word-index="109" data-start="50.286458">right</span> <span class="tts-word" data-word-index="110" data-start="50.559916">column</span> <span class="tts-word" data-word-index="111" data-start="50.976583">is</span> <span class="tts-word" data-word-index="112" data-start="51.158875">almost</span> <span class="tts-word" data-word-index="113" data-start="51.510416">complete</span>: <span class="tts-word" data-word-index="114" data-start="52.252625">4</span>, <span class="tts-word" data-word-index="115" data-start="52.903666">3</span>, <span class="tts-word" data-word-index="116" data-start="53.502625">and</span> <span class="tts-word" data-word-index="117" data-start="53.671875">one</span> <span class="tts-word" data-word-index="118" data-start="53.919291">blank</span>. <span class="tts-word" data-word-index="119" data-start="55.351583">It</span> <span class="tts-word" data-word-index="120" data-start="55.520833">also</span> <span class="tts-word" data-word-index="121" data-start="55.820333">has</span> <span class="tts-word" data-word-index="122" data-start="56.041666">to</span> <span class="tts-word" data-word-index="123" data-start="56.171875">add</span> <span class="tts-word" data-word-index="124" data-start="56.406250">to</span> <span class="tts-word" data-word-index="125" data-start="56.510416">15</span>. <span class="tts-word" data-word-index="126" data-start="58.125000">So</span> <span class="tts-word" data-word-index="127" data-start="58.437500">4</span> <span class="tts-word" data-word-index="128" data-start="58.697916">+</span> <span class="tts-word" data-word-index="129" data-start="59.023458">3</span> <span class="tts-word" data-word-index="130" data-start="59.335958">+</span> <span class="tts-word" data-word-index="131" data-start="59.700541">blank</span> <span class="tts-word" data-word-index="132" data-start="60.039083">= 15</span>. <span class="tts-word" data-word-index="133" data-start="61.966166">Since</span> <span class="tts-word" data-word-index="134" data-start="62.304708">4 + 3 = 7</span>, <span class="tts-word" data-word-index="135" data-start="64.453125">the</span> <span class="tts-word" data-word-index="136" data-start="64.557291">missing</span> <span class="tts-word" data-word-index="137" data-start="64.921875">number</span> <span class="tts-word" data-word-index="138" data-start="65.234375">is</span> <span class="tts-word" data-word-index="139" data-start="65.390625">8</span>.</span>”</div>
     <div class="cue"><strong>Image cue:</strong> Highlight the right column and write 4 + 3 + □ = 15.</div>
@@ -150,7 +159,7 @@
 
 <section class="step" data-section-index="4" data-section-label="Section 05" data-start-time="66.718750">
   <div>
-    <div class="num">Step 4 — Fill the center</div>
+    <div class="section-head"><div class="num">Step 4 — Fill the center</div><button class="section-speak-button" type="button" aria-label="Play Section 05" title="Play this section" data-section-index="4"><svg class="section-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="section-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button></div>
     <h2>Use the main diagonal</h2>
     <div class="say" data-section-index="4"><strong>Say:</strong> “<span class="narration-text"><span class="tts-word" data-word-index="140" data-start="66.718750">The</span> <span class="tts-word" data-word-index="141" data-start="66.875000">diagonal</span> <span class="tts-word" data-word-index="142" data-start="67.447916">from</span> <span class="tts-word" data-word-index="143" data-start="67.643250">top-left</span> <span class="tts-word" data-word-index="144" data-start="68.281250">to</span> <span class="tts-word" data-word-index="145" data-start="68.385416">bottom-right</span> <span class="tts-word" data-word-index="146" data-start="69.010416">now</span> <span class="tts-word" data-word-index="147" data-start="69.218750">has</span> <span class="tts-word" data-word-index="148" data-start="69.414083">2</span>, <span class="tts-word" data-word-index="149" data-start="69.947916">blank</span>, <span class="tts-word" data-word-index="150" data-start="70.533875">and</span> <span class="tts-word" data-word-index="151" data-start="70.677083">8</span>. <span class="tts-word" data-word-index="152" data-start="72.005208">It</span> <span class="tts-word" data-word-index="153" data-start="72.161458">must</span> <span class="tts-word" data-word-index="154" data-start="72.447916">also</span> <span class="tts-word" data-word-index="155" data-start="72.773458">total</span> <span class="tts-word" data-word-index="156" data-start="73.112000">15</span>. <span class="tts-word" data-word-index="157" data-start="74.700541">So</span> <span class="tts-word" data-word-index="158" data-start="74.973958">2</span> <span class="tts-word" data-word-index="159" data-start="75.195333">+</span> <span class="tts-word" data-word-index="160" data-start="75.494791">blank</span> <span class="tts-word" data-word-index="161" data-start="75.833333">+</span> <span class="tts-word" data-word-index="162" data-start="76.145833">8 = 15</span>. <span class="tts-word" data-word-index="163" data-start="78.541666">The</span> <span class="tts-word" data-word-index="164" data-start="78.671875">missing</span> <span class="tts-word" data-word-index="165" data-start="79.036458">number</span> <span class="tts-word" data-word-index="166" data-start="79.335958">is</span> <span class="tts-word" data-word-index="167" data-start="79.492208">5</span>. <span class="tts-word" data-word-index="168" data-start="80.950541">This</span> <span class="tts-word" data-word-index="169" data-start="81.223958">is</span> <span class="tts-word" data-word-index="170" data-start="81.354166">a</span> <span class="tts-word" data-word-index="171" data-start="81.432291">very</span> <span class="tts-word" data-word-index="172" data-start="81.757833">important</span> <span class="tts-word" data-word-index="173" data-start="82.200541">moment</span>: <span class="tts-word" data-word-index="174" data-start="82.916666">in</span> <span class="tts-word" data-word-index="175" data-start="83.046875">a</span> <span class="tts-word" data-word-index="176" data-start="83.112000">1–9</span> <span class="tts-word" data-word-index="177" data-start="83.815125">magic</span> <span class="tts-word" data-word-index="178" data-start="84.218750">square</span>, <span class="tts-word" data-word-index="179" data-start="84.895833">the</span> <span class="tts-word" data-word-index="180" data-start="85.013041">center</span> <span class="tts-word" data-word-index="181" data-start="85.364583">is</span> <span class="tts-word" data-word-index="182" data-start="85.520833">5</span>.</span>”</div>
     <div class="ask"><strong>Ask:</strong> “What does the diagonal tell us immediately after we know 2 and 8?”</div>
@@ -170,7 +179,7 @@
 
 <section class="step" data-section-index="5" data-section-label="Section 06" data-start-time="86.979166">
   <div>
-    <div class="num">Step 5 — Fill the middle-left number</div>
+    <div class="section-head"><div class="num">Step 5 — Fill the middle-left number</div><button class="section-speak-button" type="button" aria-label="Play Section 06" title="Play this section" data-section-index="5"><svg class="section-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="section-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button></div>
     <h2>Use the second row</h2>
     <div class="say" data-section-index="5"><strong>Say:</strong> “<span class="narration-text"><span class="tts-word" data-word-index="183" data-start="86.979166">The</span> <span class="tts-word" data-word-index="184" data-start="87.135416">second</span> <span class="tts-word" data-word-index="185" data-start="87.539083">row</span> <span class="tts-word" data-word-index="186" data-start="87.721375">now</span> <span class="tts-word" data-word-index="187" data-start="87.942708">has</span> <span class="tts-word" data-word-index="188" data-start="88.151041">blank</span>, <span class="tts-word" data-word-index="189" data-start="88.737000">5</span>, <span class="tts-word" data-word-index="190" data-start="89.427083">and</span> <span class="tts-word" data-word-index="191" data-start="89.570333">3</span>. <span class="tts-word" data-word-index="192" data-start="90.924500">The</span> <span class="tts-word" data-word-index="193" data-start="91.080750">row</span> <span class="tts-word" data-word-index="194" data-start="91.276041">must</span> <span class="tts-word" data-word-index="195" data-start="91.588541">equal</span> <span class="tts-word" data-word-index="196" data-start="91.862000">15</span>. <span class="tts-word" data-word-index="197" data-start="93.463541">So</span> <span class="tts-word" data-word-index="198" data-start="93.723958">blank</span> <span class="tts-word" data-word-index="199" data-start="94.062500">+</span> <span class="tts-word" data-word-index="200" data-start="94.375000">5 + 3 = 15</span>. <span class="tts-word" data-word-index="201" data-start="97.500000">Since</span> <span class="tts-word" data-word-index="202" data-start="97.825541">5 + 3 = 8</span>, <span class="tts-word" data-word-index="203" data-start="99.752625">the</span> <span class="tts-word" data-word-index="204" data-start="99.869791">blank</span> <span class="tts-word" data-word-index="205" data-start="100.182291">is</span> <span class="tts-word" data-word-index="206" data-start="100.312500">7</span>.</span>”</div>
     <div class="cue"><strong>Image cue:</strong> Highlight the middle row.</div>
@@ -189,7 +198,7 @@
 
 <section class="step" data-section-index="6" data-section-label="Section 07" data-start-time="101.705750">
   <div>
-    <div class="num">Step 6 — Fill the bottom-left number</div>
+    <div class="section-head"><div class="num">Step 6 — Fill the bottom-left number</div><button class="section-speak-button" type="button" aria-label="Play Section 07" title="Play this section" data-section-index="6"><svg class="section-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="section-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button></div>
     <h2>Use the first column</h2>
     <div class="say" data-section-index="6"><strong>Say:</strong> “<span class="narration-text"><span class="tts-word" data-word-index="207" data-start="101.705750">Now</span> <span class="tts-word" data-word-index="208" data-start="101.966166">look</span> <span class="tts-word" data-word-index="209" data-start="102.187500">at</span> <span class="tts-word" data-word-index="210" data-start="102.278666">the</span> <span class="tts-word" data-word-index="211" data-start="102.382833">first</span> <span class="tts-word" data-word-index="212" data-start="102.734375">column</span>: <span class="tts-word" data-word-index="213" data-start="103.385416">2</span>, <span class="tts-word" data-word-index="214" data-start="103.932291">7</span>, <span class="tts-word" data-word-index="215" data-start="104.583333">and</span> <span class="tts-word" data-word-index="216" data-start="104.726583">blank</span>. <span class="tts-word" data-word-index="217" data-start="106.158875">This</span> <span class="tts-word" data-word-index="218" data-start="106.419291">column</span> <span class="tts-word" data-word-index="219" data-start="106.822916">must</span> <span class="tts-word" data-word-index="220" data-start="107.096375">also</span> <span class="tts-word" data-word-index="221" data-start="107.421875">equal</span> <span class="tts-word" data-word-index="222" data-start="107.734375">15</span>. <span class="tts-word" data-word-index="223" data-start="109.309916">So</span> <span class="tts-word" data-word-index="224" data-start="109.583333">2</span> <span class="tts-word" data-word-index="225" data-start="109.791666">+</span> <span class="tts-word" data-word-index="226" data-start="110.091166">7</span> <span class="tts-word" data-word-index="227" data-start="110.442708">+</span> <span class="tts-word" data-word-index="228" data-start="110.755208">blank</span> <span class="tts-word" data-word-index="229" data-start="111.093750">= 15</span>. <span class="tts-word" data-word-index="230" data-start="113.020833">Since</span> <span class="tts-word" data-word-index="231" data-start="113.346375">2 + 7 = 9</span>, <span class="tts-word" data-word-index="232" data-start="115.338541">the</span> <span class="tts-word" data-word-index="233" data-start="115.442708">blank</span> <span class="tts-word" data-word-index="234" data-start="115.755208">is</span> <span class="tts-word" data-word-index="235" data-start="115.885416">6</span>.</span>”</div>
     <div class="cue"><strong>Image cue:</strong> Highlight the first column.</div>
@@ -208,7 +217,7 @@
 
 <section class="step" data-section-index="7" data-section-label="Section 08" data-start-time="117.356791">
   <div>
-    <div class="num">Step 7 — Fill the last empty number</div>
+    <div class="section-head"><div class="num">Step 7 — Fill the last empty number</div><button class="section-speak-button" type="button" aria-label="Play Section 08" title="Play this section" data-section-index="7"><svg class="section-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="section-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button></div>
     <h2>Use the bottom row</h2>
     <div class="say" data-section-index="7"><strong>Say:</strong> “<span class="narration-text"><span class="tts-word" data-word-index="236" data-start="117.356791">Only</span> <span class="tts-word" data-word-index="237" data-start="117.682291">one</span> <span class="tts-word" data-word-index="238" data-start="117.968750">square</span> <span class="tts-word" data-word-index="239" data-start="118.307291">is</span> <span class="tts-word" data-word-index="240" data-start="118.463541">left</span>. <span class="tts-word" data-word-index="241" data-start="119.856791">The</span> <span class="tts-word" data-word-index="242" data-start="120.013041">bottom</span> <span class="tts-word" data-word-index="243" data-start="120.377625">row</span> <span class="tts-word" data-word-index="244" data-start="120.520833">has</span> <span class="tts-word" data-word-index="245" data-start="120.716166">6</span>, <span class="tts-word" data-word-index="246" data-start="121.328125">blank</span>, <span class="tts-word" data-word-index="247" data-start="121.927083">and</span> <span class="tts-word" data-word-index="248" data-start="122.083333">8</span>. <span class="tts-word" data-word-index="249" data-start="123.424500">It</span> <span class="tts-word" data-word-index="250" data-start="123.580750">must</span> <span class="tts-word" data-word-index="251" data-start="123.867208">equal</span> <span class="tts-word" data-word-index="252" data-start="124.153666">15</span>. <span class="tts-word" data-word-index="253" data-start="125.755208">So</span> <span class="tts-word" data-word-index="254" data-start="126.015625">6</span> <span class="tts-word" data-word-index="255" data-start="126.328125">+</span> <span class="tts-word" data-word-index="256" data-start="126.627625">blank</span> <span class="tts-word" data-word-index="257" data-start="126.979166">+</span> <span class="tts-word" data-word-index="258" data-start="127.291666">8 = 15</span>. <span class="tts-word" data-word-index="259" data-start="129.700541">Since</span> <span class="tts-word" data-word-index="260" data-start="130.026041">6 + 8 = 14</span>, <span class="tts-word" data-word-index="261" data-start="132.226583">the</span> <span class="tts-word" data-word-index="262" data-start="132.330750">missing</span> <span class="tts-word" data-word-index="263" data-start="132.708333">number</span> <span class="tts-word" data-word-index="264" data-start="133.020833">is</span> <span class="tts-word" data-word-index="265" data-start="133.177083">1</span>.</span>”</div>
     <div class="cue"><strong>Image cue:</strong> Highlight the bottom row.</div>
@@ -227,7 +236,7 @@
 
 <section class="step final" data-section-index="8" data-section-label="Section 09" data-start-time="134.492208">
   <div>
-    <div class="num">Step 8 — Verify the answer</div>
+    <div class="section-head"><div class="num">Step 8 — Verify the answer</div><button class="section-speak-button" type="button" aria-label="Play Section 09" title="Play this section" data-section-index="8"><svg class="section-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="section-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button></div>
     <h2>Check rows, columns, and diagonals</h2>
     <div class="say" data-section-index="8"><strong>Say:</strong> “<span class="narration-text"><span class="tts-word" data-word-index="266" data-start="134.492208">We</span> <span class="tts-word" data-word-index="267" data-start="134.661458">should</span> <span class="tts-word" data-word-index="268" data-start="134.869791">not</span> <span class="tts-word" data-word-index="269" data-start="135.130208">stop</span> <span class="tts-word" data-word-index="270" data-start="135.442708">after</span> <span class="tts-word" data-word-index="271" data-start="135.742208">filling</span> <span class="tts-word" data-word-index="272" data-start="136.067708">the</span> <span class="tts-word" data-word-index="273" data-start="136.184916">grid</span>. <span class="tts-word" data-word-index="274" data-start="137.513041">We</span> <span class="tts-word" data-word-index="275" data-start="137.708333">verify</span> <span class="tts-word" data-word-index="276" data-start="138.294291">it</span>. <span class="tts-word" data-word-index="277" data-start="139.505208">Each</span> <span class="tts-word" data-word-index="278" data-start="139.804708">row</span> <span class="tts-word" data-word-index="279" data-start="139.987000">equals</span> <span class="tts-word" data-word-index="280" data-start="140.442708">15</span>, <span class="tts-word" data-word-index="281" data-start="141.237000">each</span> <span class="tts-word" data-word-index="282" data-start="141.484375">column</span> <span class="tts-word" data-word-index="283" data-start="141.862000">equals</span> <span class="tts-word" data-word-index="284" data-start="142.265625">15</span>, <span class="tts-word" data-word-index="285" data-start="143.125000">and</span> <span class="tts-word" data-word-index="286" data-start="143.268250">both</span> <span class="tts-word" data-word-index="287" data-start="143.528666">diagonals</span> <span class="tts-word" data-word-index="288" data-start="144.166666">equal</span> <span class="tts-word" data-word-index="289" data-start="144.466166">15</span>. <span class="tts-word" data-word-index="290" data-start="146.054708">That</span> <span class="tts-word" data-word-index="291" data-start="146.341166">proves</span> <span class="tts-word" data-word-index="292" data-start="146.601583">the</span> <span class="tts-word" data-word-index="293" data-start="146.718750">square</span> <span class="tts-word" data-word-index="294" data-start="147.070333">is</span> <span class="tts-word" data-word-index="295" data-start="147.213541">correct</span>.</span>”</div>
     <div class="ask"><strong>Ask:</strong> “Can you choose one row, one column, and one diagonal to check?”</div>
@@ -250,7 +259,7 @@
 
 <section class="step" data-section-index="9" data-section-label="Section 10" data-start-time="148.697916">
   <div>
-    <div class="num">Optional extension — Algebra method</div>
+    <div class="section-head"><div class="num">Optional extension — Algebra method</div><button class="section-speak-button" type="button" aria-label="Play Section 10" title="Play this section" data-section-index="9"><svg class="section-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="section-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button></div>
     <h2>For stronger students</h2>
     <div class="say" data-section-index="9"><strong>Say:</strong> “<span class="narration-text"><span class="tts-word" data-word-index="296" data-start="148.697916">Another</span> <span class="tts-word" data-word-index="297" data-start="149.140625">way</span> <span class="tts-word" data-word-index="298" data-start="149.375000">is</span> <span class="tts-word" data-word-index="299" data-start="149.544291">to</span> <span class="tts-word" data-word-index="300" data-start="149.661458">let</span> <span class="tts-word" data-word-index="301" data-start="149.843750">the</span> <span class="tts-word" data-word-index="302" data-start="149.934916">top-left</span> <span class="tts-word" data-word-index="303" data-start="150.494791">number</span> <span class="tts-word" data-word-index="304" data-start="150.768250">be</span> <span class="tts-word" data-word-index="305" data-start="151.015625">a</span> <span class="tts-word" data-word-index="306" data-start="151.250000">and</span> <span class="tts-word" data-word-index="307" data-start="151.445333">the</span> <span class="tts-word" data-word-index="308" data-start="151.549500">common</span> <span class="tts-word" data-word-index="309" data-start="151.979166">sum</span> <span class="tts-word" data-word-index="310" data-start="152.200541">be</span> <span class="tts-word" data-word-index="311" data-start="152.356791">S</span>. <span class="tts-word" data-word-index="312" data-start="153.750000">The</span> <span class="tts-word" data-word-index="313" data-start="153.906250">first</span> <span class="tts-word" data-word-index="314" data-start="154.270833">row</span> <span class="tts-word" data-word-index="315" data-start="154.479166">gives</span> <span class="tts-word" data-word-index="316" data-start="154.765625">S</span> <span class="tts-word" data-word-index="317" data-start="154.947916">=</span> <span class="tts-word" data-word-index="318" data-start="155.364583">a</span> <span class="tts-word" data-word-index="319" data-start="155.442708">+</span> <span class="tts-word" data-word-index="320" data-start="155.768250">13</span>. <span class="tts-word" data-word-index="321" data-start="157.343750">The</span> <span class="tts-word" data-word-index="322" data-start="157.500000">right</span> <span class="tts-word" data-word-index="323" data-start="157.773458">column</span> <span class="tts-word" data-word-index="324" data-start="158.203125">gives</span> <span class="tts-word" data-word-index="325" data-start="158.411458">the</span> <span class="tts-word" data-word-index="326" data-start="158.515625">bottom-right</span> <span class="tts-word" data-word-index="327" data-start="159.062500">number</span> <span class="tts-word" data-word-index="328" data-start="159.414083">as</span> <span class="tts-word" data-word-index="329" data-start="159.544291">a</span> <span class="tts-word" data-word-index="330" data-start="159.609375">+</span> <span class="tts-word" data-word-index="331" data-start="159.921875">6</span>. <span class="tts-word" data-word-index="332" data-start="161.393250">When</span> <span class="tts-word" data-word-index="333" data-start="161.588541">we</span> <span class="tts-word" data-word-index="334" data-start="161.731791">combine</span> <span class="tts-word" data-word-index="335" data-start="162.135416">the</span> <span class="tts-word" data-word-index="336" data-start="162.226583">equations</span>, <span class="tts-word" data-word-index="337" data-start="163.085958">we</span> <span class="tts-word" data-word-index="338" data-start="163.216166">get</span> <span class="tts-word" data-word-index="339" data-start="163.398458">a</span> <span class="tts-word" data-word-index="340" data-start="163.489583">=</span> <span class="tts-word" data-word-index="341" data-start="163.971375">2</span>, <span class="tts-word" data-word-index="342" data-start="164.557291">so</span> <span class="tts-word" data-word-index="343" data-start="164.765625">S</span> <span class="tts-word" data-word-index="344" data-start="164.960958">= 15</span>.</span>”</div>
     <div class="cue"><strong>Image cue:</strong> Label the unknown cells with letters a, d, e, g, h, i and show the equations.</div>
@@ -268,7 +277,7 @@
 
 <section class="step" data-section-index="10" data-section-label="Section 11" data-start-time="166.901041">
   <div>
-    <div class="num">Optional extension — Position relationship</div>
+    <div class="section-head"><div class="num">Optional extension — Position relationship</div><button class="section-speak-button" type="button" aria-label="Play Section 11" title="Play this section" data-section-index="10"><svg class="section-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="section-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button></div>
     <h2>Show a useful pattern</h2>
     <div class="say" data-section-index="10"><strong>Say:</strong> “<span class="narration-text"><span class="tts-word" data-word-index="345" data-start="166.901041">In</span> <span class="tts-word" data-word-index="346" data-start="167.070333">a</span> <span class="tts-word" data-word-index="347" data-start="167.135416">3×3</span> <span class="tts-word" data-word-index="348" data-start="167.916666">magic</span> <span class="tts-word" data-word-index="349" data-start="168.346375">square</span>, <span class="tts-word" data-word-index="350" data-start="169.010416">a</span> <span class="tts-word" data-word-index="351" data-start="169.075541">corner</span> <span class="tts-word" data-word-index="352" data-start="169.440125">can</span> <span class="tts-word" data-word-index="353" data-start="169.596375">be</span> <span class="tts-word" data-word-index="354" data-start="169.739583">related</span> <span class="tts-word" data-word-index="355" data-start="170.208333">to</span> <span class="tts-word" data-word-index="356" data-start="170.312500">nearby</span> <span class="tts-word" data-word-index="357" data-start="170.742208">edge-middle</span> <span class="tts-word" data-word-index="358" data-start="171.237000">cells</span>. <span class="tts-word" data-word-index="359" data-start="172.734375">For</span> <span class="tts-word" data-word-index="360" data-start="172.929708">the</span> <span class="tts-word" data-word-index="361" data-start="173.033875">top-left</span> <span class="tts-word" data-word-index="362" data-start="173.567708">corner</span>, <span class="tts-word" data-word-index="363" data-start="174.244791">we</span> <span class="tts-word" data-word-index="364" data-start="174.401041">can</span> <span class="tts-word" data-word-index="365" data-start="174.557291">derive</span> <span class="tts-word" data-word-index="366" data-start="174.973958">2a</span> <span class="tts-word" data-word-index="367" data-start="175.442708">=</span> <span class="tts-word" data-word-index="368" data-start="175.950541">h</span> <span class="tts-word" data-word-index="369" data-start="176.210958">+</span> <span class="tts-word" data-word-index="370" data-start="176.536458">f</span>, <span class="tts-word" data-word-index="371" data-start="177.083333">so</span> <span class="tts-word" data-word-index="372" data-start="177.317708">a</span> <span class="tts-word" data-word-index="373" data-start="177.421875">=</span> (<span class="tts-word" data-word-index="374" data-start="178.242208">h</span> <span class="tts-word" data-word-index="375" data-start="178.489583">+</span> <span class="tts-word" data-word-index="376" data-start="178.802083">f</span>) <span class="tts-word" data-word-index="377" data-start="179.348958">÷</span> <span class="tts-word" data-word-index="378" data-start="179.947916">2</span>. <span class="tts-word" data-word-index="379" data-start="181.380208">Here</span> <span class="tts-word" data-word-index="380" data-start="181.627625">f</span> <span class="tts-word" data-word-index="381" data-start="181.809916">is</span> <span class="tts-word" data-word-index="382" data-start="181.966166">3</span> <span class="tts-word" data-word-index="383" data-start="182.226583">and</span> <span class="tts-word" data-word-index="384" data-start="182.369791">h</span> <span class="tts-word" data-word-index="385" data-start="182.604166">is</span> <span class="tts-word" data-word-index="386" data-start="182.747416">1</span>, <span class="tts-word" data-word-index="387" data-start="183.359375">so</span> <span class="tts-word" data-word-index="388" data-start="183.567708">a</span> <span class="tts-word" data-word-index="389" data-start="183.658875">=</span> <span class="tts-word" data-word-index="390" data-start="184.140625">(3 + 1) ÷ 2 = 2</span>.</span>”</div>
     <div class="cue"><strong>Image cue:</strong> Highlight a, f, and h, then show a = average of f and h.</div>
@@ -287,7 +296,7 @@
 
 <section class="step final" data-section-index="11" data-section-label="Section 12" data-start-time="190.052083">
   <div>
-    <div class="num">Closing — Student recap</div>
+    <div class="section-head"><div class="num">Closing — Student recap</div><button class="section-speak-button" type="button" aria-label="Play Section 12" title="Play this section" data-section-index="11"><svg class="section-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg><svg class="section-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button></div>
     <h2>Let the student explain back</h2>
     <div class="say" data-section-index="11"><strong>Say:</strong> “<span class="narration-text"><span class="tts-word" data-word-index="391" data-start="190.052083">Your</span> <span class="tts-word" data-word-index="392" data-start="190.286458">turn</span>: <span class="tts-word" data-word-index="393" data-start="190.911458">explain</span> <span class="tts-word" data-word-index="394" data-start="191.380208">why</span> <span class="tts-word" data-word-index="395" data-start="191.536458">the</span> <span class="tts-word" data-word-index="396" data-start="191.653666">magic</span> <span class="tts-word" data-word-index="397" data-start="192.122416">sum</span> <span class="tts-word" data-word-index="398" data-start="192.356791">is</span> <span class="tts-word" data-word-index="399" data-start="192.526041">15</span>, <span class="tts-word" data-word-index="400" data-start="193.450541">then</span> <span class="tts-word" data-word-index="401" data-start="193.606791">explain</span> <span class="tts-word" data-word-index="402" data-start="194.140625">how</span> <span class="tts-word" data-word-index="403" data-start="194.296875">we</span> <span class="tts-word" data-word-index="404" data-start="194.440125">used</span> <span class="tts-word" data-word-index="405" data-start="194.713541">a</span> <span class="tts-word" data-word-index="406" data-start="194.765625">row</span>, <span class="tts-word" data-word-index="407" data-start="195.351583">a</span> <span class="tts-word" data-word-index="408" data-start="195.429708">column</span>, <span class="tts-word" data-word-index="409" data-start="196.171875">and</span> <span class="tts-word" data-word-index="410" data-start="196.276041">a</span> <span class="tts-word" data-word-index="411" data-start="196.341166">diagonal</span> <span class="tts-word" data-word-index="412" data-start="196.953125">to</span> <span class="tts-word" data-word-index="413" data-start="197.083333">finish</span> <span class="tts-word" data-word-index="414" data-start="197.460958">the</span> <span class="tts-word" data-word-index="415" data-start="197.565125">square</span>.</span>”</div>
     <div class="ask"><strong>Check understanding:</strong> Student should say: total 1–9 is 45, each row sum is 15, then each missing cell is found from one line with only one blank.</div>
@@ -323,8 +332,10 @@ const playerTitle = document.getElementById("player-title");
 const playerStatus = document.getElementById("player-status");
 const wordSpans = Array.from(document.querySelectorAll(".tts-word"));
 const sections = Array.from(document.querySelectorAll(".step[data-start-time]"));
+const sectionButtons = Array.from(document.querySelectorAll(".section-speak-button"));
 let activeWord = -1;
 let activeSection = -1;
+let pauseAfterSection = null;
 let rafId = null;
 
 function findActiveWord(time) {
@@ -352,6 +363,38 @@ function setActiveSection(index, shouldScroll) {
   if (shouldScroll) section.scrollIntoView({ block: "center", behavior: "smooth" });
 }
 
+function sectionIndexForTime(time) {
+  const current = TUTORIAL_TIMINGS.sections.findIndex((section) => (
+    time >= section.start - 0.25 && time < section.end
+  ));
+  if (current >= 0) return current;
+  return TUTORIAL_TIMINGS.sections.findIndex((section) => time < section.start);
+}
+
+function syncSectionButtons() {
+  const playingIndex = (!audio.paused && !audio.ended) ? sectionIndexForTime(audio.currentTime) : -1;
+  sections.forEach((section, index) => {
+    const button = sectionButtons[index];
+    const isSpeaking = index === playingIndex;
+    section.classList.toggle("is-speaking-section", isSpeaking);
+    if (!button) return;
+    const label = section.dataset.sectionLabel || `Section ${index + 1}`;
+    button.setAttribute("aria-label", `${isSpeaking ? "Pause" : "Play"} ${label}`);
+    button.title = isSpeaking ? "Pause this section" : "Play this section";
+  });
+}
+
+function checkSectionPause() {
+  if (pauseAfterSection === null || audio.paused || audio.ended) return;
+  const section = TUTORIAL_TIMINGS.sections[pauseAfterSection];
+  if (!section) return;
+  if (audio.currentTime >= section.end - 0.04) {
+    audio.currentTime = section.end;
+    audio.pause();
+    pauseAfterSection = null;
+  }
+}
+
 function paint(shouldScroll = false) {
   const nextWord = findActiveWord(audio.currentTime);
   if (nextWord !== activeWord) {
@@ -363,14 +406,17 @@ function paint(shouldScroll = false) {
       if (!Number.isNaN(sectionIndex)) setActiveSection(sectionIndex, shouldScroll);
     }
   }
+  syncSectionButtons();
 }
 
 function tick() {
   paint(true);
+  checkSectionPause();
   if (!audio.paused && !audio.ended) rafId = requestAnimationFrame(tick);
 }
 
-function seekTo(time) {
+function seekTo(time, sectionIndex = null) {
+  pauseAfterSection = sectionIndex ?? sectionIndexForTime(time);
   audio.currentTime = Math.max(0, time);
   paint(true);
   audio.play().catch(() => {});
@@ -382,15 +428,16 @@ function toggleSectionPlayback(section, index) {
   const isCurrentSectionTime = audio.currentTime >= start - 0.25 && audio.currentTime < end;
   if (isCurrentSectionTime && !audio.paused && !audio.ended) {
     audio.pause();
+    pauseAfterSection = null;
     return;
   }
-  seekTo(start);
+  seekTo(start, index);
 }
 
 wordSpans.forEach((span) => {
   span.addEventListener("dblclick", (event) => {
     event.stopPropagation();
-    seekTo(Number(span.dataset.start || 0));
+    seekTo(Number(span.dataset.start || 0), sectionIndexForTime(Number(span.dataset.start || 0)));
   });
 });
 
@@ -399,22 +446,46 @@ sections.forEach((section, index) => {
   section.addEventListener("click", () => setActiveSection(index, false));
 });
 
+sectionButtons.forEach((button, index) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    if (event.detail > 1) return;
+    const section = sections[index];
+    if (section) toggleSectionPlayback(section, index);
+  });
+  button.addEventListener("dblclick", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+  });
+});
+
 audio.addEventListener("play", () => {
+  if (pauseAfterSection === null) pauseAfterSection = sectionIndexForTime(audio.currentTime);
   if (rafId) cancelAnimationFrame(rafId);
   tick();
 });
 audio.addEventListener("pause", () => {
   if (rafId) cancelAnimationFrame(rafId);
   rafId = null;
+  syncSectionButtons();
 });
-audio.addEventListener("timeupdate", () => paint(false));
-audio.addEventListener("seeked", () => paint(true));
+audio.addEventListener("timeupdate", () => {
+  paint(false);
+  checkSectionPause();
+});
+audio.addEventListener("seeked", () => {
+  paint(true);
+  checkSectionPause();
+});
 audio.addEventListener("ended", () => {
   if (activeWord >= 0) wordSpans[activeWord]?.classList.remove("is-speaking");
   activeWord = -1;
+  syncSectionButtons();
 });
 
 setActiveSection(0, false);
+syncSectionButtons();
 </script>
 
 </body>

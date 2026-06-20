@@ -179,6 +179,15 @@ def player_css() -> str:
   .step{scroll-margin-bottom:130px}
   .step[data-start-time]{cursor:pointer}
   .step.is-current{border-color:#111827;box-shadow:0 2px 8px rgba(15,23,42,.08)}
+  .section-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .section-head .num{margin-bottom:0;flex:1}
+  .section-speak-button{appearance:none;border:1px solid #d1d5db;background:#fff;color:#111827;width:30px;height:30px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex:0 0 auto}
+  .section-speak-button:hover{background:#f3f4f6;border-color:#9ca3af}
+  .section-speak-button:focus-visible{outline:2px solid #111827;outline-offset:2px}
+  .section-speak-button svg{width:16px;height:16px;display:block}
+  .section-speak-button .section-icon-pause{display:none}
+  .step.is-speaking-section .section-icon-play{display:none}
+  .step.is-speaking-section .section-icon-pause{display:block}
   .say{cursor:text}
   .narration-text{cursor:pointer}
   .tts-word{border-radius:3px;transition:background-color 120ms ease,color 120ms ease}
@@ -203,8 +212,10 @@ const playerTitle = document.getElementById("player-title");
 const playerStatus = document.getElementById("player-status");
 const wordSpans = Array.from(document.querySelectorAll(".tts-word"));
 const sections = Array.from(document.querySelectorAll(".step[data-start-time]"));
+const sectionButtons = Array.from(document.querySelectorAll(".section-speak-button"));
 let activeWord = -1;
 let activeSection = -1;
+let pauseAfterSection = null;
 let rafId = null;
 
 function findActiveWord(time) {{
@@ -232,6 +243,38 @@ function setActiveSection(index, shouldScroll) {{
   if (shouldScroll) section.scrollIntoView({{ block: "center", behavior: "smooth" }});
 }}
 
+function sectionIndexForTime(time) {{
+  const current = TUTORIAL_TIMINGS.sections.findIndex((section) => (
+    time >= section.start - 0.25 && time < section.end
+  ));
+  if (current >= 0) return current;
+  return TUTORIAL_TIMINGS.sections.findIndex((section) => time < section.start);
+}}
+
+function syncSectionButtons() {{
+  const playingIndex = (!audio.paused && !audio.ended) ? sectionIndexForTime(audio.currentTime) : -1;
+  sections.forEach((section, index) => {{
+    const button = sectionButtons[index];
+    const isSpeaking = index === playingIndex;
+    section.classList.toggle("is-speaking-section", isSpeaking);
+    if (!button) return;
+    const label = section.dataset.sectionLabel || `Section ${{index + 1}}`;
+    button.setAttribute("aria-label", `${{isSpeaking ? "Pause" : "Play"}} ${{label}}`);
+    button.title = isSpeaking ? "Pause this section" : "Play this section";
+  }});
+}}
+
+function checkSectionPause() {{
+  if (pauseAfterSection === null || audio.paused || audio.ended) return;
+  const section = TUTORIAL_TIMINGS.sections[pauseAfterSection];
+  if (!section) return;
+  if (audio.currentTime >= section.end - 0.04) {{
+    audio.currentTime = section.end;
+    audio.pause();
+    pauseAfterSection = null;
+  }}
+}}
+
 function paint(shouldScroll = false) {{
   const nextWord = findActiveWord(audio.currentTime);
   if (nextWord !== activeWord) {{
@@ -243,14 +286,17 @@ function paint(shouldScroll = false) {{
       if (!Number.isNaN(sectionIndex)) setActiveSection(sectionIndex, shouldScroll);
     }}
   }}
+  syncSectionButtons();
 }}
 
 function tick() {{
   paint(true);
+  checkSectionPause();
   if (!audio.paused && !audio.ended) rafId = requestAnimationFrame(tick);
 }}
 
-function seekTo(time) {{
+function seekTo(time, sectionIndex = null) {{
+  pauseAfterSection = sectionIndex ?? sectionIndexForTime(time);
   audio.currentTime = Math.max(0, time);
   paint(true);
   audio.play().catch(() => {{}});
@@ -262,15 +308,16 @@ function toggleSectionPlayback(section, index) {{
   const isCurrentSectionTime = audio.currentTime >= start - 0.25 && audio.currentTime < end;
   if (isCurrentSectionTime && !audio.paused && !audio.ended) {{
     audio.pause();
+    pauseAfterSection = null;
     return;
   }}
-  seekTo(start);
+  seekTo(start, index);
 }}
 
 wordSpans.forEach((span) => {{
   span.addEventListener("dblclick", (event) => {{
     event.stopPropagation();
-    seekTo(Number(span.dataset.start || 0));
+    seekTo(Number(span.dataset.start || 0), sectionIndexForTime(Number(span.dataset.start || 0)));
   }});
 }});
 
@@ -279,24 +326,62 @@ sections.forEach((section, index) => {{
   section.addEventListener("click", () => setActiveSection(index, false));
 }});
 
+sectionButtons.forEach((button, index) => {{
+  button.addEventListener("click", (event) => {{
+    event.preventDefault();
+    event.stopPropagation();
+    if (event.detail > 1) return;
+    const section = sections[index];
+    if (section) toggleSectionPlayback(section, index);
+  }});
+  button.addEventListener("dblclick", (event) => {{
+    event.preventDefault();
+    event.stopPropagation();
+  }});
+}});
+
 audio.addEventListener("play", () => {{
+  if (pauseAfterSection === null) pauseAfterSection = sectionIndexForTime(audio.currentTime);
   if (rafId) cancelAnimationFrame(rafId);
   tick();
 }});
 audio.addEventListener("pause", () => {{
   if (rafId) cancelAnimationFrame(rafId);
   rafId = null;
+  syncSectionButtons();
 }});
-audio.addEventListener("timeupdate", () => paint(false));
-audio.addEventListener("seeked", () => paint(true));
+audio.addEventListener("timeupdate", () => {{
+  paint(false);
+  checkSectionPause();
+}});
+audio.addEventListener("seeked", () => {{
+  paint(true);
+  checkSectionPause();
+}});
 audio.addEventListener("ended", () => {{
   if (activeWord >= 0) wordSpans[activeWord]?.classList.remove("is-speaking");
   activeWord = -1;
+  syncSectionButtons();
 }});
 
 setActiveSection(0, false);
+syncSectionButtons();
 </script>
 """
+
+
+def section_speak_button(index: int, label: str) -> str:
+    safe_label = html.escape(label, quote=True)
+    return (
+        f'<button class="section-speak-button" type="button" '
+        f'aria-label="Play {safe_label}" title="Play this section" '
+        f'data-section-index="{index}">'
+        '<svg class="section-icon-play" viewBox="0 0 24 24" aria-hidden="true">'
+        '<path fill="currentColor" d="M8 5v14l11-7z"/></svg>'
+        '<svg class="section-icon-pause" viewBox="0 0 24 24" aria-hidden="true">'
+        '<path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>'
+        "</button>"
+    )
 
 
 def build_html(
@@ -374,6 +459,23 @@ def build_html(
         replacement = (
             f'<div class="say" data-section-index="{index}">'
             f'<strong>Say:</strong> “<span class="narration-text">{timed_text}</span>”'
+            "</div>"
+        )
+        rebuilt.append(source[last : match.start()])
+        rebuilt.append(replacement)
+        last = match.end()
+    rebuilt.append(source[last:])
+    source = "".join(rebuilt)
+
+    num_matches = list(re.finditer(r'<div class="num">(.*?)</div>', source, flags=re.S))
+    rebuilt = []
+    last = 0
+    for index, match in enumerate(num_matches):
+        label = str(sections[index]["label"]) if index < len(sections) else f"Section {index + 1:02d}"
+        replacement = (
+            '<div class="section-head">'
+            f"{match.group(0)}"
+            f"{section_speak_button(index, label)}"
             "</div>"
         )
         rebuilt.append(source[last : match.start()])
