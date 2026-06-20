@@ -1,0 +1,340 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - 'heading "Tutor Teaching Script: 三阶幻方填数 / 3×3 Magic Square" [level=1] [ref=e4]'
+      - paragraph [ref=e5]: Use this as a spoken script. Each step includes an image cue that can be shown on screen or printed.
+      - generic [ref=e6]: "Main answer: 2, 9, 4 / 7, 5, 3 / 6, 1, 8"
+    - generic [ref=e7] [cursor=pointer]:
+      - generic [ref=e8]:
+        - generic [ref=e9]: Opening — Set the goal
+        - heading "What are we trying to do?" [level=2] [ref=e10]
+        - generic [ref=e11]:
+          - strong [ref=e12]: "Say:"
+          - text: “
+          - generic [ref=e13]: "Today we are completing a 3×3 magic square. A magic square means every row, every column, and both diagonals must have the same total. We already know three numbers: 9, 4, and 3."
+          - text: ”
+        - generic [ref=e14]:
+          - strong [ref=e15]: "Ask:"
+          - text: “Which places are already filled? Which places are still empty?”
+        - generic [ref=e16]:
+          - strong [ref=e17]: "Image cue:"
+          - text: Original problem grid with only 9, 4, and 3 filled in.
+      - generic [ref=e18]:
+        - img "Original magic square grid" [ref=e19]:
+          - generic [ref=e22]:
+            - generic [ref=e23]: "9"
+            - generic [ref=e24]: "4"
+            - generic [ref=e25]: "3"
+          - generic [ref=e26]:
+            - generic [ref=e27]: □
+            - generic [ref=e28]: □
+            - generic [ref=e29]: □
+            - generic [ref=e30]: □
+            - generic [ref=e31]: □
+            - generic [ref=e32]: □
+        - generic [ref=e33]: "Known cells: top-middle = 9, top-right = 4, middle-right = 3."
+    - generic [ref=e34] [cursor=pointer]:
+      - generic [ref=e35]:
+        - generic [ref=e36]: Step 1 — Find the magic sum
+        - heading "Use the 1–9 property" [level=2] [ref=e37]
+        - generic [ref=e38]:
+          - strong [ref=e39]: "Say:"
+          - text: “
+          - generic [ref=e40]: Because this puzzle uses the numbers 1 through 9, first find their total. The total is 45. Since there are three rows with the same sum, each row must add to 45 ÷ 3, which is 15. So the magic sum is 15.
+          - text: ”
+        - generic [ref=e41]:
+          - strong [ref=e42]: "Ask:"
+          - text: “Why do we divide by 3, not by 9?”
+        - generic [ref=e43]:
+          - strong [ref=e44]: "Image cue:"
+          - text: Number cards 1–9 flowing into 45, then 45 ÷ 3 = 15.
+      - generic [ref=e45]:
+        - img "Numbers 1 to 9 total 45 and magic sum is 15" [ref=e46]:
+          - generic [ref=e47]:
+            - generic [ref=e49]: "1"
+            - generic [ref=e51]: "2"
+            - generic [ref=e53]: "3"
+            - generic [ref=e55]: "4"
+            - generic [ref=e57]: "5"
+            - generic [ref=e59]: "6"
+            - generic [ref=e61]: "7"
+            - generic [ref=e63]: "8"
+            - generic [ref=e65]: "9"
+          - generic [ref=e66]: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45
+          - generic [ref=e67]: 45 ÷ 3 = 15
+          - generic [ref=e69]: Magic sum = 15
+        - generic [ref=e70]: Every complete line must equal 15.
+    - generic [ref=e71] [cursor=pointer]:
+      - generic [ref=e72]:
+        - generic [ref=e73]: Step 2 — Fill the top-left corner
+        - heading "Use the first row" [level=2] [ref=e74]
+        - generic [ref=e75]:
+          - strong [ref=e76]: "Say:"
+          - text: “
+          - generic [ref=e77]: Look at the top row. It has one missing number, plus 9 and 4. The whole row must be 15. So blank + 9 + 4 = 15. Since 9 + 4 = 13, the missing number is 2.
+          - text: ”
+        - generic [ref=e78]:
+          - strong [ref=e79]: "Image cue:"
+          - text: Highlight the top row and write □ + 9 + 4 = 15.
+      - generic [ref=e80]:
+        - img "Top row calculation gives top-left equals 2" [ref=e81]:
+          - generic [ref=e85]:
+            - generic [ref=e86]: "2"
+            - generic [ref=e87]: "9"
+            - generic [ref=e88]: "4"
+            - generic [ref=e89]: "3"
+          - generic [ref=e90]: □ + 9 + 4 = 15 → □ = 2
+        - generic [ref=e91]: Top-left = 2.
+    - generic [ref=e92] [cursor=pointer]:
+      - generic [ref=e93]:
+        - generic [ref=e94]: Step 3 — Fill the bottom-right corner
+        - heading "Use the right column" [level=2] [ref=e95]
+        - generic [ref=e96]:
+          - strong [ref=e97]: "Say:"
+          - text: “
+          - generic [ref=e98]: "Now the right column is almost complete: 4, 3, and one blank. It also has to add to 15. So 4 + 3 + blank = 15. Since 4 + 3 = 7, the missing number is 8."
+          - text: ”
+        - generic [ref=e99]:
+          - strong [ref=e100]: "Image cue:"
+          - text: Highlight the right column and write 4 + 3 + □ = 15.
+      - generic [ref=e101]:
+        - img "Right column calculation gives bottom-right equals 8" [ref=e102]:
+          - generic [ref=e106]:
+            - generic [ref=e107]: "2"
+            - generic [ref=e108]: "9"
+            - generic [ref=e109]: "4"
+            - generic [ref=e110]: "3"
+            - generic [ref=e111]: "8"
+          - generic [ref=e112]: 4 + 3 + □ = 15 → □ = 8
+        - generic [ref=e113]: Bottom-right = 8.
+    - generic [ref=e114] [cursor=pointer]:
+      - generic [ref=e115]:
+        - generic [ref=e116]: Step 4 — Fill the center
+        - heading "Use the main diagonal" [level=2] [ref=e117]
+        - generic [ref=e118]:
+          - strong [ref=e119]: "Say:"
+          - text: “
+          - generic [ref=e120]: "The diagonal from top-left to bottom-right now has 2, blank, and 8. It must also total 15. So 2 + blank + 8 = 15. The missing number is 5. This is a very important moment: in a 1–9 magic square, the center is 5."
+          - text: ”
+        - generic [ref=e121]:
+          - strong [ref=e122]: "Ask:"
+          - text: “What does the diagonal tell us immediately after we know 2 and 8?”
+        - generic [ref=e123]:
+          - strong [ref=e124]: "Image cue:"
+          - text: Highlight the diagonal 2–5–8.
+      - generic [ref=e125]:
+        - img "Diagonal calculation gives center equals 5" [ref=e126]:
+          - generic [ref=e130]:
+            - generic [ref=e131]: "2"
+            - generic [ref=e132]: "9"
+            - generic [ref=e133]: "4"
+            - generic [ref=e134]: "5"
+            - generic [ref=e135]: "3"
+            - generic [ref=e136]: "8"
+          - generic [ref=e137]: 2 + □ + 8 = 15 → □ = 5
+        - generic [ref=e138]: Center = 5.
+    - generic [ref=e139] [cursor=pointer]:
+      - generic [ref=e140]:
+        - generic [ref=e141]: Step 5 — Fill the middle-left number
+        - heading "Use the second row" [level=2] [ref=e142]
+        - generic [ref=e143]:
+          - strong [ref=e144]: "Say:"
+          - text: “
+          - generic [ref=e145]: The second row now has blank, 5, and 3. The row must equal 15. So blank + 5 + 3 = 15. Since 5 + 3 = 8, the blank is 7.
+          - text: ”
+        - generic [ref=e146]:
+          - strong [ref=e147]: "Image cue:"
+          - text: Highlight the middle row.
+      - generic [ref=e148]:
+        - img "Middle row calculation gives middle-left equals 7" [ref=e149]:
+          - generic [ref=e153]:
+            - generic [ref=e154]: "2"
+            - generic [ref=e155]: "9"
+            - generic [ref=e156]: "4"
+            - generic [ref=e157]: "7"
+            - generic [ref=e158]: "5"
+            - generic [ref=e159]: "3"
+            - generic [ref=e160]: "8"
+          - generic [ref=e161]: □ + 5 + 3 = 15 → □ = 7
+        - generic [ref=e162]: Middle-left = 7.
+    - generic [ref=e163] [cursor=pointer]:
+      - generic [ref=e164]:
+        - generic [ref=e165]: Step 6 — Fill the bottom-left number
+        - heading "Use the first column" [level=2] [ref=e166]
+        - generic [ref=e167]:
+          - strong [ref=e168]: "Say:"
+          - text: “
+          - generic [ref=e169]: "Now look at the first column: 2, 7, and blank. This column must also equal 15. So 2 + 7 + blank = 15. Since 2 + 7 = 9, the blank is 6."
+          - text: ”
+        - generic [ref=e170]:
+          - strong [ref=e171]: "Image cue:"
+          - text: Highlight the first column.
+      - generic [ref=e172]:
+        - img "First column calculation gives bottom-left equals 6" [ref=e173]:
+          - generic [ref=e177]:
+            - generic [ref=e178]: "2"
+            - generic [ref=e179]: "9"
+            - generic [ref=e180]: "4"
+            - generic [ref=e181]: "7"
+            - generic [ref=e182]: "5"
+            - generic [ref=e183]: "3"
+            - generic [ref=e184]: "6"
+            - generic [ref=e185]: "8"
+          - generic [ref=e186]: 2 + 7 + □ = 15 → □ = 6
+        - generic [ref=e187]: Bottom-left = 6.
+    - generic [ref=e188] [cursor=pointer]:
+      - generic [ref=e189]:
+        - generic [ref=e190]: Step 7 — Fill the last empty number
+        - heading "Use the bottom row" [level=2] [ref=e191]
+        - generic [ref=e192]:
+          - strong [ref=e193]: "Say:"
+          - text: “
+          - generic [ref=e194]: Only one square is left. The bottom row has 6, blank, and 8. It must equal 15. So 6 + blank + 8 = 15. Since 6 + 8 = 14, the missing number is 1.
+          - text: ”
+        - generic [ref=e195]:
+          - strong [ref=e196]: "Image cue:"
+          - text: Highlight the bottom row.
+      - generic [ref=e197]:
+        - img "Bottom row calculation gives bottom-middle equals 1" [ref=e198]:
+          - generic [ref=e202]:
+            - generic [ref=e203]: "2"
+            - generic [ref=e204]: "9"
+            - generic [ref=e205]: "4"
+            - generic [ref=e206]: "7"
+            - generic [ref=e207]: "5"
+            - generic [ref=e208]: "3"
+            - generic [ref=e209]: "6"
+            - generic [ref=e210]: "1"
+            - generic [ref=e211]: "8"
+          - generic [ref=e212]: 6 + □ + 8 = 15 → □ = 1
+        - generic [ref=e213]: Bottom-middle = 1.
+    - generic [ref=e214] [cursor=pointer]:
+      - generic [ref=e215]:
+        - generic [ref=e216]: Step 8 — Verify the answer
+        - heading "Check rows, columns, and diagonals" [level=2] [ref=e217]
+        - generic [ref=e218]:
+          - strong [ref=e219]: "Say:"
+          - text: “
+          - generic [ref=e220]: We should not stop after filling the grid. We verify it. Each row equals 15, each column equals 15, and both diagonals equal 15. That proves the square is correct.
+          - text: ”
+        - generic [ref=e221]:
+          - strong [ref=e222]: "Ask:"
+          - text: “Can you choose one row, one column, and one diagonal to check?”
+        - generic [ref=e223]:
+          - strong [ref=e224]: "Image cue:"
+          - text: Final completed grid with eight checks around it.
+      - generic [ref=e225]:
+        - img "Final magic square and verification sums" [ref=e226]:
+          - generic [ref=e229]:
+            - generic [ref=e230]: "2"
+            - generic [ref=e231]: "9"
+            - generic [ref=e232]: "4"
+            - generic [ref=e233]: "7"
+            - generic [ref=e234]: "5"
+            - generic [ref=e235]: "3"
+            - generic [ref=e236]: "6"
+            - generic [ref=e237]: "1"
+            - generic [ref=e238]: "8"
+          - generic [ref=e239]:
+            - generic [ref=e240]: 2+9+4=15
+            - generic [ref=e241]: 7+5+3=15
+            - generic [ref=e242]: 6+1+8=15
+            - generic [ref=e243]: 2+7+6=15
+            - generic [ref=e244]: 9+5+1=15
+            - generic [ref=e245]: 4+3+8=15
+            - generic [ref=e246]: 2+5+8=15
+            - generic [ref=e247]: 4+5+6=15
+        - generic [ref=e248]: "Final answer: every line equals 15."
+    - generic [ref=e249] [cursor=pointer]:
+      - generic [ref=e250]:
+        - generic [ref=e251]: Optional extension — Algebra method
+        - heading "For stronger students" [level=2] [ref=e252]
+        - generic [ref=e253]:
+          - strong [ref=e254]: "Say:"
+          - text: “
+          - generic [ref=e255]: Another way is to let the top-left number be a and the common sum be S. The first row gives S = a + 13. The right column gives the bottom-right number as a + 6. When we combine the equations, we get a = 2, so S = 15.
+          - text: ”
+        - generic [ref=e256]:
+          - strong [ref=e257]: "Image cue:"
+          - text: Label the unknown cells with letters a, d, e, g, h, i and show the equations.
+      - generic [ref=e258]:
+        - img "Algebra method with variables" [ref=e259]:
+          - generic [ref=e262]:
+            - generic [ref=e263]: a
+            - generic [ref=e264]: "9"
+            - generic [ref=e265]: "4"
+            - generic [ref=e266]: d
+            - generic [ref=e267]: e
+            - generic [ref=e268]: "3"
+            - generic [ref=e269]: g
+            - generic [ref=e270]: h
+            - generic [ref=e271]: i
+          - generic [ref=e272]:
+            - generic [ref=e273]: S = a + 13
+            - generic [ref=e274]: i = a + 6
+            - generic [ref=e275]: e = 7 − a
+            - generic [ref=e276]: d = 2a + 3
+            - generic [ref=e277]: g = 2a + 2
+            - generic [ref=e278]: a+d+g=S → a=2
+        - generic [ref=e279]: This method is good for algebra practice.
+    - generic [ref=e280] [cursor=pointer]:
+      - generic [ref=e281]:
+        - generic [ref=e282]: Optional extension — Position relationship
+        - heading "Show a useful pattern" [level=2] [ref=e283]
+        - generic [ref=e284]:
+          - strong [ref=e285]: "Say:"
+          - text: “
+          - generic [ref=e286]: In a 3×3 magic square, a corner can be related to nearby edge-middle cells. For the top-left corner, we can derive 2a = h + f, so a = (h + f) ÷ 2. Here f is 3 and h is 1, so a = (3 + 1) ÷ 2 = 2.
+          - text: ”
+        - generic [ref=e287]:
+          - strong [ref=e288]: "Image cue:"
+          - text: Highlight a, f, and h, then show a = average of f and h.
+      - generic [ref=e289]:
+        - img "Position relationship a equals average of f and h" [ref=e290]:
+          - generic [ref=e296]:
+            - generic [ref=e297]: a
+            - generic [ref=e298]: "9"
+            - generic [ref=e299]: "4"
+            - generic [ref=e300]: d
+            - generic [ref=e301]: e
+            - generic [ref=e302]: f=3
+            - generic [ref=e303]: g
+            - generic [ref=e304]: h=1
+            - generic [ref=e305]: i
+          - generic [ref=e306]:
+            - generic [ref=e307]: 2a = h + f
+            - generic [ref=e308]: a = (h + f) ÷ 2
+            - generic [ref=e309]: a = (1 + 3) ÷ 2
+            - generic [ref=e310]: a = 2
+        - generic [ref=e311]: A neat extension after students understand the main solution.
+    - generic [ref=e312] [cursor=pointer]:
+      - generic [ref=e313]:
+        - generic [ref=e314]: Closing — Student recap
+        - heading "Let the student explain back" [level=2] [ref=e315]
+        - generic [ref=e316]:
+          - strong [ref=e317]: "Say:"
+          - text: “
+          - generic [ref=e318]: "Your turn: explain why the magic sum is 15, then explain how we used a row, a column, and a diagonal to finish the square."
+          - text: ”
+        - generic [ref=e319]:
+          - strong [ref=e320]: "Check understanding:"
+          - text: "Student should say: total 1–9 is 45, each row sum is 15, then each missing cell is found from one line with only one blank."
+      - table [ref=e322]:
+        - rowgroup [ref=e323]:
+          - row "Prompt Expected student answer" [ref=e324]:
+            - columnheader "Prompt" [ref=e325]
+            - columnheader "Expected student answer" [ref=e326]
+          - row "Why is the magic sum 15? 1–9 total 45; 3 rows share the total; 45 ÷ 3 = 15." [ref=e327]:
+            - cell "Why is the magic sum 15?" [ref=e328]
+            - cell "1–9 total 45; 3 rows share the total; 45 ÷ 3 = 15." [ref=e329]
+          - row "How did we find 2? □ + 9 + 4 = 15." [ref=e330]:
+            - cell "How did we find 2?" [ref=e331]
+            - cell "□ + 9 + 4 = 15." [ref=e332]
+          - row "How do we know the answer is correct? Rows, columns, and diagonals all add to 15." [ref=e333]:
+            - cell "How do we know the answer is correct?" [ref=e334]
+            - cell "Rows, columns, and diagonals all add to 15." [ref=e335]
+    - paragraph [ref=e336]: Prepared for the daily question page. The diagrams are original SVG teaching aids created from the problem data and solution steps.
+  - region "Narration player" [ref=e337]:
+    - generic [ref=e339]:
+      - generic [ref=e340]: Section 01
+      - generic [ref=e341]: What are we trying to do?

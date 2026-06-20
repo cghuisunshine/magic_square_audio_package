@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tutor Teaching Script — 3×3 Magic Square</title>
+<style>
+  :root{--ink:#111827;--muted:#4b5563;--line:#d1d5db;--blue:#2563eb;--yellow:#fef3c7;--green:#dcfce7;--red:#fee2e2;--bg:#f8fafc;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC","Microsoft YaHei",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:1040px;margin:auto;padding:28px 18px 60px}
+  header{background:#fff;border:1px solid #e5e7eb;border-radius:20px;padding:28px;margin-bottom:18px;box-shadow:0 12px 32px rgba(15,23,42,.07)}
+  h1{margin:0 0 8px;font-size:2rem;line-height:1.2}
+  h2{font-size:1.25rem;margin:0 0 12px;border-left:6px solid var(--blue);padding-left:12px}
+  .subtitle{color:var(--muted);margin:0}
+  .meta{display:inline-block;margin-top:14px;background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe;border-radius:999px;padding:6px 12px;font-weight:700}
+  .step{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:18px;align-items:center;background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:22px;margin:18px 0;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+  .step .num{font-weight:800;color:#1d4ed8;margin-bottom:6px}
+  .say{background:#f8fafc;border-left:4px solid #94a3b8;border-radius:12px;padding:12px 14px;margin:10px 0}
+  .cue{background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12;border-radius:12px;padding:10px 12px;margin-top:10px}
+  .ask{background:#f0fdf4;border:1px solid #bbf7d0;color:#14532d;border-radius:12px;padding:10px 12px;margin-top:10px}
+  .imgcard{background:#f9fafb;border:1px solid #e5e7eb;border-radius:16px;padding:14px;text-align:center}
+  svg{max-width:100%;height:auto}
+  .caption{font-size:.92rem;color:var(--muted);margin-top:8px}
+  .formula{font-family:"Times New Roman",Georgia,serif;font-size:1.18rem;font-weight:700;color:#0f172a}
+  .final{background:#ecfdf5;border-color:#bbf7d0}
+  .small{font-size:.95rem;color:var(--muted)}
+  table{border-collapse:collapse;width:100%;background:#fff;border-radius:12px;overflow:hidden}
+  th,td{border:1px solid #d1d5db;padding:10px;vertical-align:top;text-align:left}
+  th{background:#eff6ff}
+  @media(max-width:820px){.step{grid-template-columns:1fr}h1{font-size:1.55rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Tutor Teaching Script: 三阶幻方填数 / 3×3 Magic Square</h1>
+  <p class="subtitle">Use this as a spoken script. Each step includes an image cue that can be shown on screen or printed.</p>
+  <div class="meta">Main answer: 2, 9, 4 / 7, 5, 3 / 6, 1, 8</div>
+</header>
+
+<section class="step">
+  <div>
+    <div class="num">Opening — Set the goal</div>
+    <h2>What are we trying to do?</h2>
+    <div class="say"><strong>Say:</strong> “Today we are completing a 3×3 magic square. A magic square means every row, every column, and both diagonals must have the same total. We already know three numbers: 9, 4, and 3.”</div>
+    <div class="ask"><strong>Ask:</strong> “Which places are already filled? Which places are still empty?”</div>
+    <div class="cue"><strong>Image cue:</strong> Original problem grid with only 9, 4, and 3 filled in.</div>
+  </div>
+  <div class="imgcard">
+    <svg viewBox="0 0 360 320" role="img" aria-label="Original magic square grid">
+      <rect x="30" y="30" width="300" height="300" rx="14" fill="white" stroke="#d1d5db"/>
+      <g stroke="#111827" stroke-width="4">
+        <line x1="130" y1="30" x2="130" y2="330"/><line x1="230" y1="30" x2="230" y2="330"/>
+        <line x1="30" y1="130" x2="330" y2="130"/><line x1="30" y1="230" x2="330" y2="230"/>
+      </g>
+      <g font-size="54" font-weight="800" text-anchor="middle" dominant-baseline="middle" fill="#111827">
+        <text x="180" y="80">9</text><text x="280" y="80">4</text><text x="280" y="180">3</text>
+      </g>
+      <g font-size="26" text-anchor="middle" dominant-baseline="middle" fill="#9ca3af">
+        <text x="80" y="80">□</text><text x="80" y="180">□</text><text x="180" y="180">□</text><text x="80" y="280">□</text><text x="180" y="280">□</text><text x="280" y="280">□</text>
+      </g>
+    </svg>
+    <div class="caption">Known cells: top-middle = 9, top-right = 4, middle-right = 3.</div>
+  </div>
+</section>
+
+<section class="step">
+  <div>
+    <div class="num">Step 1 — Find the magic sum</div>
+    <h2>Use the 1–9 property</h2>
+    <div class="say"><strong>Say:</strong> “Because this puzzle uses the numbers 1 through 9, first find their total. The total is 45. Since there are three rows with the same sum, each row must add to 45 ÷ 3, which is 15. So the magic sum is 15.”</div>
+    <div class="ask"><strong>Ask:</strong> “Why do we divide by 3, not by 9?”</div>
+    <div class="cue"><strong>Image cue:</strong> Number cards 1–9 flowing into 45, then 45 ÷ 3 = 15.</div>
+  </div>
+  <div class="imgcard">
+    <svg viewBox="0 0 520 260" role="img" aria-label="Numbers 1 to 9 total 45 and magic sum is 15">
+      <g font-size="24" font-weight="800" text-anchor="middle" dominant-baseline="middle">
+        <rect x="18" y="35" width="44" height="44" rx="8" fill="#eff6ff" stroke="#93c5fd"/><text x="40" y="57">1</text>
+        <rect x="68" y="35" width="44" height="44" rx="8" fill="#eff6ff" stroke="#93c5fd"/><text x="90" y="57">2</text>
+        <rect x="118" y="35" width="44" height="44" rx="8" fill="#eff6ff" stroke="#93c5fd"/><text x="140" y="57">3</text>
+        <rect x="168" y="35" width="44" height="44" rx="8" fill="#eff6ff" stroke="#93c5fd"/><text x="190" y="57">4</text>
+        <rect x="218" y="35" width="44" height="44" rx="8" fill="#eff6ff" stroke="#93c5fd"/><text x="240" y="57">5</text>
+        <rect x="268" y="35" width="44" height="44" rx="8" fill="#eff6ff" stroke="#93c5fd"/><text x="290" y="57">6</text>
+        <rect x="318" y="35" width="44" height="44" rx="8" fill="#eff6ff" stroke="#93c5fd"/><text x="340" y="57">7</text>
+        <rect x="368" y="35" width="44" height="44" rx="8" fill="#eff6ff" stroke="#93c5fd"/><text x="390" y="57">8</text>
+        <rect x="418" y="35" width="44" height="44" rx="8" fill="#eff6ff" stroke="#93c5fd"/><text x="440" y="57">9</text>
+      </g>
+      <text x="260" y="130" class="formula" text-anchor="middle">1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45</text>
+      <text x="260" y="190" class="formula" text-anchor="middle">45 ÷ 3 = 15</text>
+      <rect x="190" y="210" width="140" height="38" rx="19" fill="#dcfce7" stroke="#86efac"/>
+      <text x="260" y="230" font-size="20" font-weight="800" text-anchor="middle" dominant-baseline="middle" fill="#166534">Magic sum = 15</text>
+    </svg>
+    <div class="caption">Every complete line must equal 15.</div>
+  </div>
+</section>
+
+<section class="step">
+  <div>
+    <div class="num">Step 2 — Fill the top-left corner</div>
+    <h2>Use the first row</h2>
+    <div class="say"><strong>Say:</strong> “Look at the top row. It has one missing number, plus 9 and 4. The whole row must be 15. So blank + 9 + 4 = 15. Since 9 + 4 = 13, the missing number is 2.”</div>
+    <div class="cue"><strong>Image cue:</strong> Highlight the top row and write □ + 9 + 4 = 15.</div>
+  </div>
+  <div class="imgcard">
+    <svg viewBox="0 0 420 360" role="img" aria-label="Top row calculation gives top-left equals 2">
+      <rect x="50" y="30" width="300" height="300" rx="14" fill="white" stroke="#d1d5db"/>
+      <rect x="50" y="30" width="300" height="100" rx="14" fill="#fef3c7"/>
+      <g stroke="#111827" stroke-width="4"><line x1="150" y1="30" x2="150" y2="330"/><line x1="250" y1="30" x2="250" y2="330"/><line x1="50" y1="130" x2="350" y2="130"/><line x1="50" y1="230" x2="350" y2="230"/></g>
+      <g font-size="54" font-weight="800" text-anchor="middle" dominant-baseline="middle" fill="#111827"><text x="100" y="80" fill="#dc2626">2</text><text x="200" y="80">9</text><text x="300" y="80">4</text><text x="300" y="180">3</text></g>
+      <text x="210" y="350" font-size="24" font-weight="800" text-anchor="middle">□ + 9 + 4 = 15 → □ = 2</text>
+    </svg>
+    <div class="caption">Top-left = 2.</div>
+  </div>
+</section>
+
+<section class="step">
+  <div>
+    <div class="num">Step 3 — Fill the bottom-right corner</div>
+    <h2>Use the right column</h2>
+    <div class="say"><strong>Say:</strong> “Now the right column is almost complete: 4, 3, and one blank. It also has to add to 15. So 4 + 3 + blank = 15. Since 4 + 3 = 7, the missing number is 8.”</div>
+    <div class="cue"><strong>Image cue:</strong> Highlight the right column and write 4 + 3 + □ = 15.</div>
+  </div>
+  <div class="imgcard">
+    <svg viewBox="0 0 420 360" role="img" aria-label="Right column calculation gives bottom-right equals 8">
+      <rect x="50" y="30" width="300" height="300" rx="14" fill="white" stroke="#d1d5db"/>
+      <rect x="250" y="30" width="100" height="300" rx="14" fill="#fef3c7"/>
+      <g stroke="#111827" stroke-width="4"><line x1="150" y1="30" x2="150" y2="330"/><line x1="250" y1="30" x2="250" y2="330"/><line x1="50" y1="130" x2="350" y2="130"/><line x1="50" y1="230" x2="350" y2="230"/></g>
+      <g font-size="54" font-weight="800" text-anchor="middle" dominant-baseline="middle" fill="#111827"><text x="100" y="80">2</text><text x="200" y="80">9</text><text x="300" y="80">4</text><text x="300" y="180">3</text><text x="300" y="280" fill="#dc2626">8</text></g>
+      <text x="210" y="350" font-size="24" font-weight="800" text-anchor="middle">4 + 3 + □ = 15 → □ = 8</text>
+    </svg>
+    <div class="caption">Bottom-right = 8.</div>
+  </div>
+</section>
+
+<section class="step">
+  <div>
+    <div class="num">Step 4 — Fill the center</div>
+    <h2>Use the main diagonal</h2>
+    <div class="say"><strong>Say:</strong> “The diagonal from top-left to bottom-right now has 2, blank, and 8. It must also total 15. So 2 + blank + 8 = 15. The missing number is 5. This is a very important moment: in a 1–9 magic square, the center is 5.”</div>
+    <div class="ask"><strong>Ask:</strong> “What does the diagonal tell us immediately after we know 2 and 8?”</div>
+    <div class="cue"><strong>Image cue:</strong> Highlight the diagonal 2–5–8.</div>
+  </div>
+  <div class="imgcard">
+    <svg viewBox="0 0 420 360" role="img" aria-label="Diagonal calculation gives center equals 5">
+      <rect x="50" y="30" width="300" height="300" rx="14" fill="white" stroke="#d1d5db"/>
+      <polygon points="50,30 150,30 350,230 350,330 250,330 50,130" fill="#fef3c7" opacity=".9"/>
+      <g stroke="#111827" stroke-width="4"><line x1="150" y1="30" x2="150" y2="330"/><line x1="250" y1="30" x2="250" y2="330"/><line x1="50" y1="130" x2="350" y2="130"/><line x1="50" y1="230" x2="350" y2="230"/></g>
+      <g font-size="54" font-weight="800" text-anchor="middle" dominant-baseline="middle" fill="#111827"><text x="100" y="80">2</text><text x="200" y="80">9</text><text x="300" y="80">4</text><text x="200" y="180" fill="#dc2626">5</text><text x="300" y="180">3</text><text x="300" y="280">8</text></g>
+      <text x="210" y="350" font-size="24" font-weight="800" text-anchor="middle">2 + □ + 8 = 15 → □ = 5</text>
+    </svg>
+    <div class="caption">Center = 5.</div>
+  </div>
+</section>
+
+<section class="step">
+  <div>
+    <div class="num">Step 5 — Fill the middle-left number</div>
+    <h2>Use the second row</h2>
+    <div class="say"><strong>Say:</strong> “The second row now has blank, 5, and 3. The row must equal 15. So blank + 5 + 3 = 15. Since 5 + 3 = 8, the blank is 7.”</div>
+    <div class="cue"><strong>Image cue:</strong> Highlight the middle row.</div>
+  </div>
+  <div class="imgcard">
+    <svg viewBox="0 0 420 360" role="img" aria-label="Middle row calculation gives middle-left equals 7">
+      <rect x="50" y="30" width="300" height="300" rx="14" fill="white" stroke="#d1d5db"/>
+      <rect x="50" y="130" width="300" height="100" fill="#fef3c7"/>
+      <g stroke="#111827" stroke-width="4"><line x1="150" y1="30" x2="150" y2="330"/><line x1="250" y1="30" x2="250" y2="330"/><line x1="50" y1="130" x2="350" y2="130"/><line x1="50" y1="230" x2="350" y2="230"/></g>
+      <g font-size="54" font-weight="800" text-anchor="middle" dominant-baseline="middle" fill="#111827"><text x="100" y="80">2</text><text x="200" y="80">9</text><text x="300" y="80">4</text><text x="100" y="180" fill="#dc2626">7</text><text x="200" y="180">5</text><text x="300" y="180">3</text><text x="300" y="280">8</text></g>
+      <text x="210" y="350" font-size="24" font-weight="800" text-anchor="middle">□ + 5 + 3 = 15 → □ = 7</text>
+    </svg>
+    <div class="caption">Middle-left = 7.</div>
+  </div>
+</section>
+
+<section class="step">
+  <div>
+    <div class="num">Step 6 — Fill the bottom-left number</div>
+    <h2>Use the first column</h2>
+    <div class="say"><strong>Say:</strong> “Now look at the first column: 2, 7, and blank. This column must also equal 15. So 2 + 7 + blank = 15. Since 2 + 7 = 9, the blank is 6.”</div>
+    <div class="cue"><strong>Image cue:</strong> Highlight the first column.</div>
+  </div>
+  <div class="imgcard">
+    <svg viewBox="0 0 420 360" role="img" aria-label="First column calculation gives bottom-left equals 6">
+      <rect x="50" y="30" width="300" height="300" rx="14" fill="white" stroke="#d1d5db"/>
+      <rect x="50" y="30" width="100" height="300" rx="14" fill="#fef3c7"/>
+      <g stroke="#111827" stroke-width="4"><line x1="150" y1="30" x2="150" y2="330"/><line x1="250" y1="30" x2="250" y2="330"/><line x1="50" y1="130" x2="350" y2="130"/><line x1="50" y1="230" x2="350" y2="230"/></g>
+      <g font-size="54" font-weight="800" text-anchor="middle" dominant-baseline="middle" fill="#111827"><text x="100" y="80">2</text><text x="200" y="80">9</text><text x="300" y="80">4</text><text x="100" y="180">7</text><text x="200" y="180">5</text><text x="300" y="180">3</text><text x="100" y="280" fill="#dc2626">6</text><text x="300" y="280">8</text></g>
+      <text x="210" y="350" font-size="24" font-weight="800" text-anchor="middle">2 + 7 + □ = 15 → □ = 6</text>
+    </svg>
+    <div class="caption">Bottom-left = 6.</div>
+  </div>
+</section>
+
+<section class="step">
+  <div>
+    <div class="num">Step 7 — Fill the last empty number</div>
+    <h2>Use the bottom row</h2>
+    <div class="say"><strong>Say:</strong> “Only one square is left. The bottom row has 6, blank, and 8. It must equal 15. So 6 + blank + 8 = 15. Since 6 + 8 = 14, the missing number is 1.”</div>
+    <div class="cue"><strong>Image cue:</strong> Highlight the bottom row.</div>
+  </div>
+  <div class="imgcard">
+    <svg viewBox="0 0 420 360" role="img" aria-label="Bottom row calculation gives bottom-middle equals 1">
+      <rect x="50" y="30" width="300" height="300" rx="14" fill="white" stroke="#d1d5db"/>
+      <rect x="50" y="230" width="300" height="100" rx="14" fill="#fef3c7"/>
+      <g stroke="#111827" stroke-width="4"><line x1="150" y1="30" x2="150" y2="330"/><line x1="250" y1="30" x2="250" y2="330"/><line x1="50" y1="130" x2="350" y2="130"/><line x1="50" y1="230" x2="350" y2="230"/></g>
+      <g font-size="54" font-weight="800" text-anchor="middle" dominant-baseline="middle" fill="#111827"><text x="100" y="80">2</text><text x="200" y="80">9</text><text x="300" y="80">4</text><text x="100" y="180">7</text><text x="200" y="180">5</text><text x="300" y="180">3</text><text x="100" y="280">6</text><text x="200" y="280" fill="#dc2626">1</text><text x="300" y="280">8</text></g>
+      <text x="210" y="350" font-size="24" font-weight="800" text-anchor="middle">6 + □ + 8 = 15 → □ = 1</text>
+    </svg>
+    <div class="caption">Bottom-middle = 1.</div>
+  </div>
+</section>
+
+<section class="step final">
+  <div>
+    <div class="num">Step 8 — Verify the answer</div>
+    <h2>Check rows, columns, and diagonals</h2>
+    <div class="say"><strong>Say:</strong> “We should not stop after filling the grid. We verify it. Each row equals 15, each column equals 15, and both diagonals equal 15. That proves the square is correct.”</div>
+    <div class="ask"><strong>Ask:</strong> “Can you choose one row, one column, and one diagonal to check?”</div>
+    <div class="cue"><strong>Image cue:</strong> Final completed grid with eight checks around it.</div>
+  </div>
+  <div class="imgcard">
+    <svg viewBox="0 0 540 420" role="img" aria-label="Final magic square and verification sums">
+      <rect x="120" y="45" width="300" height="300" rx="14" fill="white" stroke="#16a34a" stroke-width="3"/>
+      <g stroke="#111827" stroke-width="4"><line x1="220" y1="45" x2="220" y2="345"/><line x1="320" y1="45" x2="320" y2="345"/><line x1="120" y1="145" x2="420" y2="145"/><line x1="120" y1="245" x2="420" y2="245"/></g>
+      <g font-size="54" font-weight="800" text-anchor="middle" dominant-baseline="middle" fill="#111827"><text x="170" y="95">2</text><text x="270" y="95">9</text><text x="370" y="95">4</text><text x="170" y="195">7</text><text x="270" y="195">5</text><text x="370" y="195">3</text><text x="170" y="295">6</text><text x="270" y="295">1</text><text x="370" y="295">8</text></g>
+      <g font-size="16" font-weight="800" fill="#166534">
+        <text x="20" y="95">2+9+4=15</text><text x="20" y="195">7+5+3=15</text><text x="20" y="295">6+1+8=15</text>
+        <text x="130" y="385">2+7+6=15</text><text x="240" y="385">9+5+1=15</text><text x="350" y="385">4+3+8=15</text>
+        <text x="425" y="150">2+5+8=15</text><text x="425" y="215">4+5+6=15</text>
+      </g>
+    </svg>
+    <div class="caption">Final answer: every line equals 15.</div>
+  </div>
+</section>
+
+<section class="step">
+  <div>
+    <div class="num">Optional extension — Algebra method</div>
+    <h2>For stronger students</h2>
+    <div class="say"><strong>Say:</strong> “Another way is to let the top-left number be a and the common sum be S. The first row gives S = a + 13. The right column gives the bottom-right number as a + 6. When we combine the equations, we get a = 2, so S = 15.”</div>
+    <div class="cue"><strong>Image cue:</strong> Label the unknown cells with letters a, d, e, g, h, i and show the equations.</div>
+  </div>
+  <div class="imgcard">
+    <svg viewBox="0 0 520 340" role="img" aria-label="Algebra method with variables">
+      <rect x="40" y="30" width="270" height="270" rx="14" fill="white" stroke="#d1d5db"/>
+      <g stroke="#111827" stroke-width="4"><line x1="130" y1="30" x2="130" y2="300"/><line x1="220" y1="30" x2="220" y2="300"/><line x1="40" y1="120" x2="310" y2="120"/><line x1="40" y1="210" x2="310" y2="210"/></g>
+      <g font-size="38" font-weight="800" text-anchor="middle" dominant-baseline="middle"><text x="85" y="75" fill="#dc2626">a</text><text x="175" y="75">9</text><text x="265" y="75">4</text><text x="85" y="165">d</text><text x="175" y="165">e</text><text x="265" y="165">3</text><text x="85" y="255">g</text><text x="175" y="255">h</text><text x="265" y="255">i</text></g>
+      <g font-size="19" font-weight="800" fill="#111827"><text x="335" y="70">S = a + 13</text><text x="335" y="110">i = a + 6</text><text x="335" y="150">e = 7 − a</text><text x="335" y="190">d = 2a + 3</text><text x="335" y="230">g = 2a + 2</text><text x="335" y="280">a+d+g=S → a=2</text></g>
+    </svg>
+    <div class="caption">This method is good for algebra practice.</div>
+  </div>
+</section>
+
+<section class="step">
+  <div>
+    <div class="num">Optional extension — Position relationship</div>
+    <h2>Show a useful pattern</h2>
+    <div class="say"><strong>Say:</strong> “In a 3×3 magic square, a corner can be related to nearby edge-middle cells. For the top-left corner, we can derive 2a = h + f, so a = (h + f) ÷ 2. Here f is 3 and h is 1, so a = (3 + 1) ÷ 2 = 2.”</div>
+    <div class="cue"><strong>Image cue:</strong> Highlight a, f, and h, then show a = average of f and h.</div>
+  </div>
+  <div class="imgcard">
+    <svg viewBox="0 0 520 340" role="img" aria-label="Position relationship a equals average of f and h">
+      <rect x="55" y="30" width="270" height="270" rx="14" fill="white" stroke="#d1d5db"/>
+      <g stroke="#111827" stroke-width="4"><line x1="145" y1="30" x2="145" y2="300"/><line x1="235" y1="30" x2="235" y2="300"/><line x1="55" y1="120" x2="325" y2="120"/><line x1="55" y1="210" x2="325" y2="210"/></g>
+      <rect x="55" y="30" width="90" height="90" fill="#fee2e2" opacity=".9"/><rect x="235" y="120" width="90" height="90" fill="#dbeafe" opacity=".9"/><rect x="145" y="210" width="90" height="90" fill="#dbeafe" opacity=".9"/>
+      <g font-size="38" font-weight="800" text-anchor="middle" dominant-baseline="middle"><text x="100" y="75" fill="#dc2626">a</text><text x="190" y="75">9</text><text x="280" y="75">4</text><text x="100" y="165">d</text><text x="190" y="165">e</text><text x="280" y="165" fill="#1d4ed8">f=3</text><text x="100" y="255">g</text><text x="190" y="255" fill="#1d4ed8">h=1</text><text x="280" y="255">i</text></g>
+      <g font-size="24" font-weight="800" fill="#111827"><text x="350" y="130">2a = h + f</text><text x="350" y="180">a = (h + f) ÷ 2</text><text x="350" y="230">a = (1 + 3) ÷ 2</text><text x="350" y="280">a = 2</text></g>
+    </svg>
+    <div class="caption">A neat extension after students understand the main solution.</div>
+  </div>
+</section>
+
+<section class="step final">
+  <div>
+    <div class="num">Closing — Student recap</div>
+    <h2>Let the student explain back</h2>
+    <div class="say"><strong>Say:</strong> “Your turn: explain why the magic sum is 15, then explain how we used a row, a column, and a diagonal to finish the square.”</div>
+    <div class="ask"><strong>Check understanding:</strong> Student should say: total 1–9 is 45, each row sum is 15, then each missing cell is found from one line with only one blank.</div>
+  </div>
+  <div class="imgcard">
+    <table>
+      <tr><th>Prompt</th><th>Expected student answer</th></tr>
+      <tr><td>Why is the magic sum 15?</td><td>1–9 total 45; 3 rows share the total; 45 ÷ 3 = 15.</td></tr>
+      <tr><td>How did we find 2?</td><td>□ + 9 + 4 = 15.</td></tr>
+      <tr><td>How do we know the answer is correct?</td><td>Rows, columns, and diagonals all add to 15.</td></tr>
+    </table>
+  </div>
+</section>
+
+<p class="small">Prepared for the daily question page. The diagrams are original SVG teaching aids created from the problem data and solution steps.</p>
+</div>
+</body>
+</html>
